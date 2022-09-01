@@ -26,7 +26,7 @@ REQUIRES_PYTHON = '>=3.6.0'
 VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
-REQUIRED = convert_deps_to_pip(pfile["packages"], r=False)
+REQUIRED = convert_deps_to_pip(pfile["packages"])
 
 # What packages are optional?
 EXTRAS = {
