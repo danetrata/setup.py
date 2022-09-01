@@ -11,6 +11,10 @@ from shutil import rmtree
 
 from setuptools import find_packages, setup, Command
 
+from pipenv.utils.dependencies import convert_deps_to_pip
+
+pfile = Project(chdir=False).parsed_pipfile
+
 # Package meta-data.
 NAME = 'mypackage'
 DESCRIPTION = 'My short description for my project.'
@@ -21,9 +25,7 @@ REQUIRES_PYTHON = '>=3.6.0'
 VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
-REQUIRED = [
-    # 'requests', 'maya', 'records',
-]
+REQUIRED = convert_deps_to_pip(pfile["packages"], r=False)
 
 # What packages are optional?
 EXTRAS = {
