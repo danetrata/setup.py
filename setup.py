@@ -11,6 +11,7 @@ from shutil import rmtree
 
 from setuptools import find_packages, setup, Command
 
+from pipenv.project import Project
 from pipenv.utils.dependencies import convert_deps_to_pip
 
 pfile = Project(chdir=False).parsed_pipfile
